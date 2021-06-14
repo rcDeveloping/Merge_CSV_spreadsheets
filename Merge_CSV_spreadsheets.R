@@ -3,9 +3,9 @@ library(dplyr)
 library(readr)
 
 # Read and merge all spreadsheet files
-df <- list.files(path = 'C:/Users/rcflo/Merge_CSV_spreadsheets_R/Data', full.names = T) %>% 
+df <- list.files(path = 'C:/Users/rcflo/Merge_CSV_spreadsheets_R/Data', full.names = TRUE) %>% 
   lapply(read_csv) %>% 
   bind_rows
 
 # Save merged CSV file
-write.csv2(df, 'C:/Users/rcflo/Merge_CSV_spreadsheets_R/Output/merged_file.csv')
+write.csv2(df, 'C:/Users/rcflo/Merge_CSV_spreadsheets_R/Output/merged_file.csv', row.names = FALSE)
